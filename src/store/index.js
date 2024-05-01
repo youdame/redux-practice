@@ -1,6 +1,9 @@
 import { createStore } from 'redux';
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 const initialCounterState = { counter: 0, showCounter: true };
+const initialAuthState = {
+  isAuthenticated: false,
+};
 
 // action 부분
 const counterSlice = createSlice({
@@ -21,14 +24,10 @@ const counterSlice = createSlice({
       state.counter += action.payload;
     },
     showCounter(state) {
-      state.counter = !state.showCounter;
+      state.showCounter = !state.showCounter;
     },
   },
 });
-
-const initialAuthState = {
-  isAuthenticated: false,
-};
 
 const authSlice = createSlice({
   name: 'authentication',
@@ -50,6 +49,7 @@ const store = configureStore({
   // reducer: counterSlice.reducer,
 
   // 아래처럼 key value로 하면 모든 리듀서를 하나의 리듀서로 합쳐줌
+  // selector의 state.다음 부분은 key 값을 따라감
   reducer: { counter: counterSlice.reducer, auth: authSlice.reducer },
 });
 
