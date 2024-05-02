@@ -17,6 +17,5 @@ const store = configureStore({
 // 사용하는 쪽에서는 이렇게 .으로 chaining해서 접근하기 때문에 action type 오타에 대해 생각할 필요가 없어짐
 // counterSlice.actions.decrement();
 
-export const counterAction = counterSlice.actions;
 export const authAction = authSlice.actions;
 export default store;
