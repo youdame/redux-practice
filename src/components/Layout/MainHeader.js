@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import CartButton from '../Cart/CartButton';
 import classes from './MainHeader.module.css';
 
